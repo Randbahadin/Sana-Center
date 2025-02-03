@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ckb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ناوەندی سانا - بازار</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/store.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ناوەندی سانا</h1>
+            <p>بەرنامەی ئیسلامی</p>
+        </div>
+    </header>
+
+    <section class="store">
+        <h2>بازار</h2>
+        <div class="store-items" id="storeItems">
+            <!-- Products will be dynamically added here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ناوەندی سانا. هەموو مافەکان پارێزراون.</p>
+    </footer>
+
+<!-- Access Bar -->
+<div class="navigation">
+        
+    <ul>
+        <li class="list">
+            <a href="index.html">
+                <span class="icon"><i class="fa-solid fa-house"></i></span>
+                <span class="text">سەرەکی</span>
+            </a>
+        </li>
+        <li class="list-active">
+            <a href="store.html">
+                <span class="icon-active"><i class="fa-solid fa-cart-shopping"></i></span>
+                <span class="text-active">بازار</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="about.html">
+                <span class="icon"><i class="fa-solid fa-circle-info"></i></span>
+                <span class="text">دەربارە</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="contact.html">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <span class="text">پەیوەندی</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="settings.html">
+                <span class="icon"><i class="fa-duotone fa-solid fa-gear"></i></span>
+                <span class="text">ڕێکخستنەکان</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYBuPWEXzFICd78bmjjUbFrfV_YW7lFTo",
+            authDomain: "sana-center-78315.firebaseapp.com",
+            projectId: "sana-center-78315",
+            storageBucket: "sana-center-78315.firebasestorage.app",
+            messagingSenderId: "534863955987",
+            appId: "1:534863955987:web:b9dbcd5e30199dcda357e6",
+            measurementId: "G-EX1NXDE2PM"
+};
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Fetch products from Firestore
+        const storeItems = document.getElementById('storeItems');
+
+        const fetchProducts = async () => {
+            const querySnapshot = await getDocs(collection(db, 'products'));
+            querySnapshot.forEach((doc) => {
+                const product = doc.data();
+                const productElement = `
+                    <div class="product">
+                        <img src="${product.image_url}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p>نرخ: $${product.price}</p>
+                    </div>
+                `;
+                storeItems.innerHTML += productElement;
+            });
+        };
+
+        fetchProducts();
+    </script>
+</body>
+</html>

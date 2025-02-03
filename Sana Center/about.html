@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ckb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ناوەندی سانا - دەربارە</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/about.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ناوەندی سانا</h1>
+            <p>بەرنامەی ئیسلامی</p>
+        </div>
+        <nav>
+    </header>
+
+    <section class="about">
+        <h2>دەربارەی ئێمە</h2>
+        <div class="about-content">
+            <p>ناوەندی سانا ناوەندێکی ئیسلامییە کە تایبەتە بۆ پەروەردەکردنی زانست و ڕۆشنبیری ئیسلامی. ئێمە هەوڵدەدەین کە خزمەتگوزاریەکانی ئیسلامی بە شێوەیەکی نوێ و کارا پێشکەش بکەین.</p>
+            <p><strong>ژمارەی پەیوەندی:</strong> ٣١٠١ ٣٨٥ ٠٧٧٢</p>
+            <p><strong>کاتەکانی کارکردن:</strong></p>
+            <ul>
+                <li>شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>یەک شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>دوو شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>سێ شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>چوار شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>پێنج شەممە: ١٠:٠٠ - ١١:٠٠</li>
+                <li>هەینی: داخراوە</li>
+            </ul>
+            <p><strong>ئیمەیڵ:</strong> <a href="mailto:Sanacenter93@gmail.com">Sanacenter93@gmail.com <i class="fa-solid fa-envelope"></i></a></p>
+            <p><strong>شوێن:</strong> <a href="https://maps.app.goo.gl/CUigaAFatFTb42ft8" target="_blank">بینین لە گووگڵ مەپس <i class="fa-solid fa-map-location-dot"></i></a></p>
+            <p><strong>تۆڕە کۆمەڵایەتییەکان:</strong></p>
+            <ul>
+                <li><a href="https://www.tiktok.com/@sana_center2?_t=ZS-8tVZYYisJGP&_r=1" target="_blank">TikTok <i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="https://www.instagram.com/sana_nawand?igsh=Zm50ZWZxbWd1MzVz" target="_blank">Instagram <i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://www.facebook.com/share/18Ke1KY9Qb/" target="_blank">Facebook <i class="fa-brands fa-facebook"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ناوەندی سانا. هەموو مافەکان پارێزراون.</p>
+    </footer>
+
+        <!-- Access Bar -->
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <a href="index.html">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="text">سەرەکی</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="store.html">
+                        <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span>
+                        <span class="text">بازار</span>
+                    </a>
+                </li>
+                <li class="list-active">
+                    <a href="about.html">
+                        <span class="icon-active"><i class="fa-solid fa-circle-info"></i></span>
+                        <span class="text-active">دەربارە</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="contact.html">
+                        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                        <span class="text">پەیوەندی</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-arrow-down"></i></span>
+                        <span class="text">دەرخستن/شاردنەوە</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    
+
+    <script>
+        // Access Bar Behavior
+        let lastScrollTop = 0;
+        const accessBar = document.querySelector('.access-bar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                accessBar.classList.add('hide');
+            } else {
+                // Scrolling up
+                accessBar.classList.remove('hide');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

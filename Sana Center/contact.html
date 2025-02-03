@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ckb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ناوەندی سانا - پەیوەندی</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/contact.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ناوەندی سانا</h1>
+            <p>بەرنامەی ئیسلامی</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">سەرەکی</a></li>
+                <li><a href="store.html">بازار</a></li>
+                <li><a href="about.html">دەربارەی ئێمە</a></li>
+                <li><a href="contact.html">پەیوەندی</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>پەیوەندی</h2>
+        <form>
+            <input type="text" placeholder="ناوت" required>
+            <input type="email" placeholder="ئیمەیڵ" required>
+            <textarea placeholder="پەیام" required></textarea>
+            <button type="submit">ناردن</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ناوەندی سانا. هەموو مافەکان پارێزراون.</p>
+    </footer>
+
+    <!-- Access Bar -->
+    <div class="access-bar">
+        <a href="index.html"><i class="fas fa-home"></i> سەرەکی</a>
+        <a href="store.html"><i class="fas fa-store"></i> بازار</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> دەربارەی ئێمە</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> پەیوەندی</a>
+    </div>
+
+    <script>
+        // Access Bar Behavior
+        let lastScrollTop = 0;
+        const accessBar = document.querySelector('.access-bar');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                accessBar.classList.add('hide');
+            } else {
+                // Scrolling up
+                accessBar.classList.remove('hide');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>

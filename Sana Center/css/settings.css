@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    background: url('../img/image.jpg');
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Slide Out Animation */
+body.slide-out {
+    animation: slideOut 0.5s ease-in-out forwards;
+}
+
+header {
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+}
+
+header .logo {
+    position: center;
+    font-size: large;
+    margin-bottom: 20px;
+    color: #ffffff;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Settings Page Styles */
+.settings {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.settings h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    animation: slideIn 1s ease-in-out;
+}
+
+.settings form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.settings .form-group {
+    margin-bottom: 20px;
+}
+
+.settings .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.settings .form-group input,
+.settings .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Amiri', serif;
+}
+
+.settings .form-group input[type="checkbox"] {
+    width: auto;
+    margin-left: 10px;
+}
+
+.settings button {
+    background-color: #007a0a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.settings button:hover {
+    background-color: #003a16;
+}
+
+/* Access Bar Styles */
+.navigation {
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul {
+    display: flex;
+    width: 350px;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #007a0a;
+}
+
+.navigation ul li.active a .icon {
+    transform: translateY(-2px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: #114d01;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.navigation ul li a:hover .icon {
+    transform: translateY(-10px);
+}
+
+footer {
+    background: linear-gradient(135deg, #033807, #035f0b);
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    right: 60;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Amiri', serif;
+}
+
+footer p {
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    font-size: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.navigation ul li a:hover .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+
+.navigation ul li a:hover .icon {
+    color: #012403;
+    cursor: pointer;
+}
+
+.text-active {
+    position: absolute;
+    color: #114d01;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+.icon-active {
+    color: #012403;
+    transition: color 0.3s ease;
+    transform: scale(1.1);
+    animation: pulse 1s infinite;
+    transform-origin: center;
+    animation-timing-function: ease-in-out;
+
+}
+
+.icon-active,
+.text-active {
+    position: absolute;
+    top: 14px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}

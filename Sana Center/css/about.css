@@ -1,0 +1,249 @@
+/* General Styles */
+body {
+    font-family: 'Amiri', serif;
+    direction: rtl;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Slide Out Animation */
+body.slide-out {
+    animation: slideOut 0.5s ease-in-out forwards;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50, #4a69bd);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header .logo p {
+    margin: 0;
+    font-size: 1.2rem;
+    animation: fadeIn 3s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+.hero {
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 4s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Access Bar Styles */
+.navigation {
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navigation ul {
+    display: flex;
+    width: 350px;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #3498db;
+}
+
+.navigation ul li.active a .icon {
+    transform: translateY(-2px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.navigation ul li a:hover .icon {
+    transform: translateY(-10px);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header .logo img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.navigation ul li a:hover .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.navigation ul li a:hover .icon {
+    color: #e67e22;
+    cursor: pointer;
+}
+
+.text-active {
+    position: absolute;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    transform: translateY(20px);
+}
+
+.icon-active {
+    color: #e67e22;
+    transition: color 0.3s ease;
+    transform: scale(1.1);
+    animation: pulse 1s infinite;
+    transform-origin: center;
+    animation-timing-function: ease-in-out;
+
+}
+
+.icon-active,
+.text-active {
+    position: absolute;
+    top: 14px;
+}
